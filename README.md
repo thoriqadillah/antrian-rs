@@ -11,5 +11,6 @@ git clone https://github.com/thoriqadillah/antrian-rs.git
 cd antrian-rs
 composer install
 php artisan key:generate
+git pull origin main
 php artisan migrate
 ```
