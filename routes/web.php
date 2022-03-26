@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AntrianController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/form-antrian', [AntrianController::class, 'index'])->name('antrian');
+Route::post('/form-antrian/post', [AntrianController::class, 'submit'])->name('antrian.post');
