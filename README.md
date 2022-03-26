@@ -8,4 +8,5 @@ Nama Anggota :
 ## Collab :
 ```
 git clone https://github.com/thoriqadillah/antrian-rs.git
+cd antrian-rs
 ```
