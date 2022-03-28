@@ -20,3 +20,6 @@ Route::get('/', function () {
 
 Route::get('/form-antrian', [AntrianController::class, 'index'])->name('antrian');
 Route::post('/form-antrian/post', [AntrianController::class, 'submit'])->name('antrian.post');
+Route::get('/login', function () {
+    return view('login/formLogin');
+});
