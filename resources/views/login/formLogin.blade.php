@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="{{ URL::asset('css/login.css') }}">
     <!---Fontawesome CDN link----->
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 <body>
     <div class="container">
@@ -15,7 +16,9 @@
         <img src="https://i.ibb.co/RCNtghn/medical-g0c04e1ecf-1280.png">
       </div>
       <div class="login-content">
+          
         <form action="index.html">
+            @csrf
           <img src="https://svgshare.com/i/Jcf.svg">
           <h2 class="title">Welcome Admin</h2>
           <div class="input-div one">
@@ -36,6 +39,7 @@
               <input type="password" class="input">
             </div>
           </div>
+          
           <a href="#">Forgot Password?</a>
           <input type="submit" class="btn" value="Login">
         </form>
