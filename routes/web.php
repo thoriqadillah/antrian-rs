@@ -21,3 +21,4 @@ Route::get('/', function () {
 Route::get('/form-antrian', [AntrianController::class, 'index'])->name('antrian');
 Route::post('/form-antrian/post', [AntrianController::class, 'submit'])->name('antrian.post');
 Route::get('/login', [AuthController::class, 'index'])->name('Login Admin');
+Route::get('/home/list', [AntrianController::class, 'list'])->name('List Antrian');

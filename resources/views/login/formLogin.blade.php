@@ -17,31 +17,18 @@
       </div>
       <div class="login-content">
           
-        <form action="index.html">
+        <form action="index.html" class="form-login" method="post">
             @csrf
-          <img src="https://svgshare.com/i/Jcf.svg">
-          <h2 class="title">Welcome Admin</h2>
-          <div class="input-div one">
-            <div class="i">
-              <i class="fas fa-user"></i>
-            </div>
-            <div class="div">
-              <h5>Email</h5>
-              <input type="text" class="input">
-            </div>
-          </div>
-          <div class="input-div pass">
-            <div class="i">
-              <i class="fas fa-lock"></i>
-            </div>
-            <div class="div">
-              <h5>Password</h5>
-              <input type="password" class="input">
-            </div>
-          </div>
           
+          <h2 class="title">Welcome Admin</h2>
+          
+            <label style="color: #696F79;font-style: normal;font-weight: 500; font-size: 16px; " class="l-email">Email</label><br><br>
+            <input type="text" class="t-input" name="email" placeholder="Enter Email" id="email"required><br>
+            <label style="color: #696F79;font-style: normal;font-weight: 500; font-size: 16px;">Password</label><br><br>
+            <input type="Password" class="t-input" placeholder="Enter Password" name="password" required><br>
+            
           <a href="#">Forgot Password?</a>
-          <input type="submit" class="btn" value="Login">
+          <button type="submit" class="btn" name="submit-btn">Login</button>
         </form>
       </div>
     </div>
