@@ -46,7 +46,7 @@
 <script type="text/javascript">
     $('.date').datepicker({
         "autoclose": true,
-       format: 'yyyy-mm-dd'
+       format: 'dd-mm-yyyy'
      }).datepicker("setDate",'now');  
 </script>
 </html>
