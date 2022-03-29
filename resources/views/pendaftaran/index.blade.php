@@ -44,8 +44,9 @@
 </body>
 
 <script type="text/javascript">
-    $('.date').datepicker({  
-       format: 'dd-mm-yyyy'
-     });  
+    $('.date').datepicker({
+        "autoclose": true,
+       format: 'yyyy-mm-dd'
+     }).datepicker("setDate",'now');  
 </script>
 </html>
