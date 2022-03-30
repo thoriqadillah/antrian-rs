@@ -1,8 +1,11 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AntrianController;
 use App\Http\Controllers\AuthController;
+use Illuminate\Support\Facades\Auth;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,10 +16,14 @@ use App\Http\Controllers\AuthController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::prefix('antrian')->group(function() {
+    Route::get('/', [AntrianController::class, 'index'])->name('antrian');
+    Route::get('/form-antrian', [AntrianController::class, 'pendaftaran'])->name('antrian.pendaftaran');
+    Route::post('/form-antrian', [AntrianController::class, 'submit'])->name('antrian.pendaftaran.post');
+});
 
-Route::get('/antrian', [AntrianController::class, 'index'])->name('antrian');
-Route::get('/antrian/form-antrian', [AntrianController::class, 'pendaftaran'])->name('antrian.pendaftaran');
-Route::post('/antrian/form-antrian', [AntrianController::class, 'submit'])->name('antrian.pendaftaran.post');
+Auth::routes();
 
-Route::get('/login', [AuthController::class, 'index'])->name('login');
-Route::post('/login', [AuthController::class, 'login'])->name('login.post');
+Route::middleware(['is_admin'])->group(function() {
+    Route::get('/admin', [AdminController::class, 'index'])->name('admin');
+});
