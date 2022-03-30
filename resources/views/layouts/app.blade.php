@@ -38,7 +38,8 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
-
+                        <a class="nav-link " href="{{route('antrian')}}">List Antrian</a>
+                        <a class="nav-link " href="{{route('antrian.pendaftaran')}}">Daftar Antrian</a>
                     </ul>
 
                     <!-- Right Side Of Navbar -->

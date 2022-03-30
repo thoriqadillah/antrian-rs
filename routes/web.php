@@ -23,6 +23,8 @@ Route::prefix('antrian')->group(function() {
     Route::post('/form', [AntrianController::class, 'submit'])->name('antrian.pendaftaran.post');
 });
 
+Route::get('/', [PoliController::class, 'index'])->name('poli');
+
 Auth::routes();
 
 Route::middleware(['is_admin'])->group(function() {

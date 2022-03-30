@@ -11,32 +11,32 @@
     <h1>List Antrian Rumah Sakit</h1>
     
     <div class="container">
-        <div class="g-col-6 g-col-md-4" id="box">
-            <div class="box-head">
-                <h3>Poli A</h3>
+        <div class='card-group'>
+            <div class='card'>
+                <div class="card-body">
+                    <h3 class='card-title text-center'>{{$poli[0]['nama_poli']}}</h3>
+                    <h1>{{$nomorA['nomor'] ?? 'Kosong'}}</h1>
+                  </div>
             </div>
-            <div class="box-text">
-                <h1 class="urutan" id="urutan" name="urutan">{{$nomorA['nomor'] ?? 'Kosong'}}</h1>
-            </div>  
         </div>
-        <div class="g-col-6 g-col-md-4" id="box">
-            <div class="box-head">
-                <h3>Poli B</h3>
+        <div class='card-group'>
+            <div class='card'>
+                <div class="card-body">
+                    <h3 class='card-title text-center'>{{$poli[1]['nama_poli']}}</h3>
+                    <h1>{{$nomorB['nomor'] ?? 'Kosong'}}</h1>
+                  </div>
             </div>
-            <div class="box-text">
-                <h1 class="urutan" id="urutan" name="urutan">{{$nomorB['nomor'] ?? 'Kosong'}}</h1>
-            </div>  
         </div>
-        <div class="g-col-6 g-col-md-4" id="box">
-            <div class="box-head">
-                <h3>Poli C</h3>
+        <div class='card-group'>
+            <div class='card'>
+                <div class="card-body">
+                    <h3 class='card-title text-center'>{{$poli[2]['nama_poli']}}</h3>
+                    <h1>{{$nomorC['nomor'] ?? 'Kosong'}}</h1>
+                  </div>
             </div>
-            <div class="box-text">
-                <h1 class="urutan" id="urutan" name="urutan">{{$nomorC['nomor'] ?? 'Kosong'}}</h1>
-            </div>  
         </div>
         <a href="{{route('antrian.pendaftaran')}}">
-            <button type="button" class="btn btn-success">Daftar Antrian</button>
+            <button type="button" class="btn btn-success" >Daftar Antrian</button>
         </a>
     </div>
 </div>

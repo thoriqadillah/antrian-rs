@@ -20,7 +20,7 @@ class AntrianSeeder extends Seeder
         for($i = 1; $i <= 5; $i++)
         {
             DB::table('antrians')->insert([
-                'poli' => 1,
+                'poli_id' => 1,
                 'nama' => $faker->name,
                 'tanggal' => date('Y-m-d', strtotime('+1 day')),
                 'nomor' => $i,
@@ -31,7 +31,7 @@ class AntrianSeeder extends Seeder
         for($i = 1; $i <= 3; $i++)
         {
             DB::table('antrians')->insert([
-                'poli' => 2,
+                'poli_id' => 2,
                 'nama' => $faker->name,
                 'tanggal' => date('Y-m-d', strtotime('+1 day')),
                 'nomor' => $i,
@@ -42,7 +42,7 @@ class AntrianSeeder extends Seeder
         for($i = 1; $i <= 4; $i++)
         {
             DB::table('antrians')->insert([
-                'poli' => 3,
+                'poli_id' => 3,
                 'nama' => $faker->name,
                 'tanggal' => date('Y-m-d', strtotime('+1 day')),
                 'nomor' => $i,
