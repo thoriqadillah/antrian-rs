@@ -19,4 +19,4 @@ Route::post('antrian/form-antrian', [AntrianController::class, 'submit'])->name(
 Route::get('/antrian', [AntrianController::class, 'list'])->name('antrian.list');
 
 Route::get('/login', [AuthController::class, 'index'])->name('login');
-Route::post('/login', [AuthController::class, 'submit'])->name('login.post');
+Route::post('/login', [AuthController::class, 'login'])->name('login.post');
