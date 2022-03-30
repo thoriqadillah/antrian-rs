@@ -27,7 +27,7 @@ class AntrianController extends Controller
         $tempNomor = Antrian::select('nomor')
             ->where('tanggal', $tempTanggal)
             ->where('poli', $request->poli)
-            ->latest()
+            ->orderBy('nomor', 'desc')
             ->first();
         if (empty($tempNomor)) {
             $antrian->nomor = 1;
