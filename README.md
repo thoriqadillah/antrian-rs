@@ -14,6 +14,7 @@ php artisan key:generate
 git pull origin main
 php artisan migrate
 ```
+
 ## IMPORTANT!
 Ketika mau push, harus `git pull origin main` terlebih dahulu
 
