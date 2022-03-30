@@ -7,10 +7,11 @@
 @section('title', 'Antrian')
 @section('content')
 
-<div class="row">
+<div class="grid">
     <h1>List Antrian Rumah Sakit</h1>
+    
     <div class="container">
-        <div class="icon-box1">
+        <div class="g-col-6 g-col-md-4">
             <div class="box-head">
                 <h3>Poli A</h3>
             </div>
@@ -18,7 +19,7 @@
                 <h1 class="urutan" id="urutan" name="urutan">C16</h1>
             </div>  
         </div>
-        <div class="icon-box1">
+        <div class="g-col-6 g-col-md-4">
             <div class="box-head">
                 <h3>Poli A</h3>
             </div>
@@ -26,7 +27,7 @@
                 <h1 class="urutan" id="urutan" name="urutan">C16</h1>
             </div>  
         </div>
-        <div class="icon-box1">
+        <div class="g-col-6 g-col-md-4">
             <div class="box-head">
                 <h3>Poli A</h3>
             </div>
