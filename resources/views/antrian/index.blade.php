@@ -1,4 +1,4 @@
-@extends('template.app')
+@extends('layouts.app')
 
 @section('custom-css')
     <link rel="stylesheet" href="{{ URL::asset('css/list.css') }}">

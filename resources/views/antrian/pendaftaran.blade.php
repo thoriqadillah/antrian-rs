@@ -1,8 +1,8 @@
-@extends('template.app')
+@extends('layouts.app')
 @section('title', 'Pendaftaran Antrian')
 @section('content')
 
-<div class="container mt-5">
+<div class="container mt-5" >
     @if (session('status'))
     <div class="alert alert-success">
         {{ session('status') }}
@@ -32,11 +32,13 @@
     </form>
 </div>
 
-<script type="text/javascript">
-    $('.date').datepicker({
+@section('custom-script')
+<script>
+    $('#inputDate').datepicker({
         autoclose: true,
         format: 'dd-mm-yyyy'
     }).datepicker("setDate", 'now');
 </script>
+@endsection
     
 @endsection
