@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('template.app')
 
 @section('custom-css')
     <link rel="stylesheet" href="{{ URL::asset('css/login.css') }}">

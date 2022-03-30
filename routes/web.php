@@ -14,9 +14,9 @@ use App\Http\Controllers\AuthController;
 |
 */
 
-Route::get('antrian/form-antrian', [AntrianController::class, 'index'])->name('antrian');
-Route::post('antrian/form-antrian', [AntrianController::class, 'submit'])->name('antrian.post');
-Route::get('/antrian', [AntrianController::class, 'list'])->name('antrian.list');
+Route::get('/antrian', [AntrianController::class, 'index'])->name('antrian');
+Route::get('/antrian/form-antrian', [AntrianController::class, 'pendaftaran'])->name('antrian.pendaftaran');
+Route::post('/antrian/form-antrian', [AntrianController::class, 'submit'])->name('antrian.pendaftaran.post');
 
 Route::get('/login', [AuthController::class, 'index'])->name('login');
 Route::post('/login', [AuthController::class, 'login'])->name('login.post');

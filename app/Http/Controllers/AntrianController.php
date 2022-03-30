@@ -8,14 +8,14 @@ use Illuminate\Support\Facades\DB;
 
 class AntrianController extends Controller
 {
-    public function index()
-    {
-        return view('pendaftaran.index');
+    public function index() {
+        return view('antrian.index');
     }
-    public function list()
-    {
-        return view('home.list');
+
+    public function pendaftaran() {
+        return view('antrian.pendaftaran');
     }
+
     public function submit(Request $request)
     {
         $antrian = new Antrian;

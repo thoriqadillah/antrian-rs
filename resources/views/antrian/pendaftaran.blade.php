@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('template.app')
 @section('title', 'Pendaftaran Antrian')
 @section('content')
 
@@ -9,7 +9,7 @@
     </div>
     @endif
     <h3 class="my-4">Form Antrian</h3>
-    <form action="{{route('antrian.post')}}" method="post">
+    <form action="{{route('antrian.pendaftaran.post')}}" method="post">
         @csrf
         <div class="mb-3">
             <label for="inputName" class="form-label">Nama</label>
