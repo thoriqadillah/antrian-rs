@@ -17,12 +17,15 @@ php artisan migrate
 ## IMPORTANT!
 Ketika mau push, harus `git pull origin main` terlebih dahulu
 
+## Install Laravel/UI
+Untuk install laravel/ui :
+```
+composer require laravel/ui
+npm install
+```
+
 ## Run Server
-Pertama kali harus `npm install && npm run dev` untuk compile bootstrapnya, kemudian :
 ```
 npm run dev
 php artisan serve
 ```
-
-
-
