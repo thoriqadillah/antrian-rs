@@ -15,8 +15,7 @@ class CreateAntriansTable extends Migration
     {
         Schema::create('antrians', function (Blueprint $table) {
             $table->id();
-            // $table->foreignId('poli_id')->constrained('polis');
-            $table->unsignedInteger('poli'); //temp
+            $table->foreignId('poli_id')->constrained('polis');
             $table->string('nama', 200);
             $table->date('tanggal');
             $table->unsignedInteger('nomor');

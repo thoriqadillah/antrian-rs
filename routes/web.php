@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PoliController;
 use App\Http\Controllers\AntrianController;
 
 /*
@@ -14,9 +15,10 @@ use App\Http\Controllers\AntrianController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('home');
+// });
+Route::get('/', [PoliController::class, 'index'] );
 
 Route::get('/form-antrian', [AntrianController::class, 'index'])->name('antrian');
 Route::post('/form-antrian/post', [AntrianController::class, 'submit'])->name('antrian.post');
