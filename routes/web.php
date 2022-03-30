@@ -18,8 +18,8 @@ use Illuminate\Support\Facades\Auth;
 */
 Route::prefix('antrian')->group(function() {
     Route::get('/', [AntrianController::class, 'index'])->name('antrian');
-    Route::get('/form-antrian', [AntrianController::class, 'pendaftaran'])->name('antrian.pendaftaran');
-    Route::post('/form-antrian', [AntrianController::class, 'submit'])->name('antrian.pendaftaran.post');
+    Route::get('/form', [AntrianController::class, 'pendaftaran'])->name('antrian.pendaftaran');
+    Route::post('/form', [AntrianController::class, 'submit'])->name('antrian.pendaftaran.post');
 });
 
 Auth::routes();

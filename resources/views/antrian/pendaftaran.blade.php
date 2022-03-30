@@ -28,6 +28,9 @@
                 <option value="3">Poli C</option>
             </select>
         </div>
+        <a href="{{route('antrian')}}">
+            <button type="button" class="btn btn-outline-primary">Kembali</button>
+        </a>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 </div>

@@ -5,11 +5,33 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Antrian;
 use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
 
 class AntrianController extends Controller
 {
     public function index() {
-        return view('antrian.index');
+        $nomorA = Antrian::select('nomor')
+            ->where('tanggal', Carbon::now()->format('Y-m-d'))
+            ->where('status', 0)
+            ->where('poli', 1)
+            ->orderBy('nomor', 'asc')
+            ->first();
+        $data['nomorA'] = $nomorA;
+        $nomorB = Antrian::select('nomor')
+            ->where('tanggal', Carbon::now()->format('Y-m-d'))
+            ->where('status', 0)
+            ->where('poli', 2)
+            ->orderBy('nomor', 'asc')
+            ->first();
+        $data['nomorB'] = $nomorB;
+        $nomorC = Antrian::select('nomor')
+            ->where('tanggal', Carbon::now()->format('Y-m-d'))
+            ->where('status', 0)
+            ->where('poli', 3)
+            ->orderBy('nomor', 'asc')
+            ->first();
+        $data['nomorC'] = $nomorC;
+        return view('antrian.index', $data);
     }
 
     public function pendaftaran() {
