@@ -1,8 +1,11 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PoliController;
 use App\Http\Controllers\AntrianController;
+use App\Http\Controllers\AuthController;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,11 +17,14 @@ use App\Http\Controllers\AntrianController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::prefix('antrian')->group(function() {
+    Route::get('/', [AntrianController::class, 'index'])->name('antrian');
+    Route::get('/form', [AntrianController::class, 'pendaftaran'])->name('antrian.pendaftaran');
+    Route::post('/form', [AntrianController::class, 'submit'])->name('antrian.pendaftaran.post');
+});
 
-// Route::get('/', function () {
-//     return view('home');
-// });
-Route::get('/', [PoliController::class, 'index'] );
+Auth::routes();
 
-Route::get('/form-antrian', [AntrianController::class, 'index'])->name('antrian');
-Route::post('/form-antrian/post', [AntrianController::class, 'submit'])->name('antrian.post');
+Route::middleware(['is_admin'])->group(function() {
+    Route::get('/admin', [AdminController::class, 'index'])->name('admin');
+});

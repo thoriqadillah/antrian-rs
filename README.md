@@ -5,7 +5,7 @@ Nama Anggota :
 3. Muhammad Faisal Shabri (195150400111038)
 4. Muhammad Fikri Almas (195150400111033)
 
-## Collab :
+## Clone Repo :
 ```
 git clone https://github.com/thoriqadillah/antrian-rs.git
 cd antrian-rs
@@ -13,4 +13,19 @@ composer install
 php artisan key:generate
 git pull origin main
 php artisan migrate
+```
+## IMPORTANT!
+Ketika mau push, harus `git pull origin main` terlebih dahulu
+
+## Install Laravel/UI
+Untuk install laravel/ui :
+```
+composer require laravel/ui
+npm install
+```
+
+## Run Server
+```
+npm run dev
+php artisan serve
 ```
