@@ -21,9 +21,7 @@ h1 {
     gap: 20px;
     position: relative;
 }
-.icon-box1 {
-    width: 200px;
-    height: 200px;
+#box {
     background: rgb(64, 183, 252);
     border-radius: 20px;
 }

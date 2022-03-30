@@ -11,7 +11,7 @@
     <h1>List Antrian Rumah Sakit</h1>
     
     <div class="container">
-        <div class="g-col-6 g-col-md-4">
+        <div class="g-col-6 g-col-md-4" id="box">
             <div class="box-head">
                 <h3>Poli A</h3>
             </div>
@@ -19,7 +19,7 @@
                 <h1 class="urutan" id="urutan" name="urutan">C16</h1>
             </div>  
         </div>
-        <div class="g-col-6 g-col-md-4">
+        <div class="g-col-6 g-col-md-4" id="box">
             <div class="box-head">
                 <h3>Poli A</h3>
             </div>
@@ -27,7 +27,7 @@
                 <h1 class="urutan" id="urutan" name="urutan">C16</h1>
             </div>  
         </div>
-        <div class="g-col-6 g-col-md-4">
+        <div class="g-col-6 g-col-md-4" id="box">
             <div class="box-head">
                 <h3>Poli A</h3>
             </div>
