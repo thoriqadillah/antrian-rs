@@ -23,9 +23,9 @@
             <label for="inputPoli" class="form-label">Poliklinik</label>
             <select class="form-select" name="poli" id="inputPoli">
                 <option selected>-</option>
-                <option value="1">Poli A</option>
-                <option value="2">Poli B</option>
-                <option value="3">Poli C</option>
+                @foreach ($polis as $poli)
+                    <option value="{{$poli->id}}">{{$poli->nama_poli}}</option>
+                @endforeach
             </select>
         </div>
         <a href="{{route('antrian')}}">

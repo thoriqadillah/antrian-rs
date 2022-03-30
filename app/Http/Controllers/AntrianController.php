@@ -11,33 +11,24 @@ use Carbon\Carbon;
 class AntrianController extends Controller
 {
     public function index() {
-        $nomorA = Antrian::select('nomor')
+        $jumlahPolis = Poli::count();
+        for($i = 1; $i <= $jumlahPolis; $i++)
+        {
+            $nomor[] = Antrian::select('nomor')
             ->where('tanggal', Carbon::now()->format('Y-m-d'))
             ->where('status', 0)
-            ->where('poli_id', 1)
+            ->where('poli_id', $i)
             ->orderBy('nomor', 'asc')
             ->first();
-        $data['nomorA'] = $nomorA;
-        $nomorB = Antrian::select('nomor')
-            ->where('tanggal', Carbon::now()->format('Y-m-d'))
-            ->where('status', 0)
-            ->where('poli_id', 2)
-            ->orderBy('nomor', 'asc')
-            ->first();
-        $data['nomorB'] = $nomorB;
-        $nomorC = Antrian::select('nomor')
-            ->where('tanggal', Carbon::now()->format('Y-m-d'))
-            ->where('status', 0)
-            ->where('poli_id', 3)
-            ->orderBy('nomor', 'asc')
-            ->first();
-        $data['nomorC'] = $nomorC;
+        }
+        $data['nomor'] = $nomor;
         $data['poli'] = Poli::select('nama_poli')->get();
         return view('antrian.index', $data);
     }
 
     public function pendaftaran() {
-        return view('antrian.pendaftaran');
+        $data['polis'] = Poli::select('id', 'nama_poli')->get();
+        return view('antrian.pendaftaran', $data);
     }
 
     public function submit(Request $request)
