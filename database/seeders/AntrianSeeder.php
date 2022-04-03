@@ -22,7 +22,7 @@ class AntrianSeeder extends Seeder
             DB::table('antrians')->insert([
                 'poli_id' => 1,
                 'nama' => $faker->name,
-                'tanggal' => date('Y-m-d', strtotime('+1 day')),
+                'tanggal' => date('Y-m-d'),
                 'nomor' => $i,
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
@@ -33,7 +33,7 @@ class AntrianSeeder extends Seeder
             DB::table('antrians')->insert([
                 'poli_id' => 2,
                 'nama' => $faker->name,
-                'tanggal' => date('Y-m-d', strtotime('+1 day')),
+                'tanggal' => date('Y-m-d'),
                 'nomor' => $i,
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
@@ -44,7 +44,7 @@ class AntrianSeeder extends Seeder
             DB::table('antrians')->insert([
                 'poli_id' => 3,
                 'nama' => $faker->name,
-                'tanggal' => date('Y-m-d', strtotime('+1 day')),
+                'tanggal' => date('Y-m-d'),
                 'nomor' => $i,
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')

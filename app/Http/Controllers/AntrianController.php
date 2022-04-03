@@ -11,6 +11,10 @@ use Carbon\Carbon;
 class AntrianController extends Controller
 {
     public function index() {
+        return view('antrian.index');
+    }
+    
+    public function nomor_antrian() {
         $jumlahPolis = Poli::count();
         for($i = 1; $i <= $jumlahPolis; $i++)
         {
@@ -21,9 +25,10 @@ class AntrianController extends Controller
             ->orderBy('nomor', 'asc')
             ->first();
         }
-        $data['nomor'] = $nomor;
-        $data['poli'] = Poli::select('nama_poli')->get();
-        return view('antrian.index', $data);
+        return response()->json([
+            'nomors' => $nomor,
+            'polis' => Poli::select('nama_poli')->get(),
+        ]);
     }
 
     public function pendaftaran() {
