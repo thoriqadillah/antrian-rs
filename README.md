@@ -13,6 +13,7 @@ composer install
 php artisan key:generate
 git pull origin main
 ```
+Kemudian copy .env ke folder project, dan sesuaikan config db nya dengan db kalian
 
 ## Migrate dan Seed :
 ```
