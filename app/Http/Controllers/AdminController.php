@@ -29,11 +29,14 @@ class AdminController extends Controller
         $date = Carbon::now()->toDateTimeString();
         $now = substr($date, 0, 10);
 
-        $loket = Antrian::select('nomor')
+        $loket = Antrian::select()
             ->where('tanggal', $now)
             ->where('status', 0)
+            ->where('poli_id', $poli)
             ->first();
-        
+
+        $loket->status = 1;
+        $loket->save();
         return redirect('/admin')->with('loket', $loket->nomor);
     }
 }
