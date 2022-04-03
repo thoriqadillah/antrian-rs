@@ -12,7 +12,11 @@ cd antrian-rs
 composer install
 php artisan key:generate
 git pull origin main
-php artisan migrate
+```
+
+## Migrate dan Seed :
+```
+php artisan migrate:refresh --seed
 ```
 
 ## IMPORTANT!
