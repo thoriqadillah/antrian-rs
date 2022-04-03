@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AntrianController;
+use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Auth;
 
@@ -26,4 +27,5 @@ Auth::routes();
 
 Route::middleware(['is_admin'])->group(function() {
     Route::get('/admin', [AdminController::class, 'index'])->name('admin');
+    Route::get('/next/{poli}', [AdminController::class, 'next'])->name('next_pasien');
 });
