@@ -1,0 +1,33 @@
+.card{
+    width: 500px;
+    margin: 80px auto;
+	padding: 30px 20px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 3px 3px rgb(117, 117, 117);
+}
+
+.header{
+    text-align: center;
+	text-transform: uppercase;
+    font-weight: bold;
+    font-size: 15pt;
+}
+input[type="checkbox"] { 
+    /* change "blue" browser chrome to yellow */
+    filter: invert(100%) hue-rotate(18deg) brightness(1.7);
+  }
+.submit{
+    margin-left:150px;
+}
+.btn-login{
+    width: 50%;
+    border-radius: 10px;
+    border: none;
+}
+.btn-login:hover{
+    background-color: rgb(241, 246, 92);
+}
+.btn-link{
+    display: inline-block;
+    margin-top: 10px;
+}
