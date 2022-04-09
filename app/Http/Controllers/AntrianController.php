@@ -53,6 +53,7 @@ class AntrianController extends Controller
     {
         $antrian = new Antrian;
         $antrian->poli_id = $request->poli;
+        $antrian->user_id = Auth::id();
         $antrian->nama = $request->nama;
         $tanggal = explode("-", $request->tanggal);
         $tempTanggal = $tanggal[2] . '-' . $tanggal[1] . '-' . $tanggal[0];
