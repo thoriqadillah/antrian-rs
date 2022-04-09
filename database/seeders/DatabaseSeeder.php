@@ -16,7 +16,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             PoliSeeder::class,
             AntrianSeeder::class,
-            AdminSeeder::class,
+            AdminSeeder::class
         ]);
     }
 }

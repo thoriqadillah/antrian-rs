@@ -7,10 +7,25 @@ use App\Models\Antrian;
 use App\Models\Poli;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
+use Mockery\Undefined;
 
 class AntrianController extends Controller
 {
     public function index() {
+        $arr = ['A', 'B', 'C'];
+        if (auth()->check()) {
+            $antrian_user = Antrian::where([
+                ['user_id', '=', Auth::id()],
+                ['status', '=', 0]
+            ])->first();
+
+            $nomor = $antrian_user->nomor;
+            $loket = $arr[$antrian_user->poli_id - 1];
+
+            return view('antrian.antrian', compact('nomor', 'loket'));
+        }
+
         return view('antrian.antrian');
     }
     
@@ -40,6 +55,7 @@ class AntrianController extends Controller
     {
         $antrian = new Antrian;
         $antrian->poli_id = $request->poli;
+        $antrian->user_id = Auth::id();
         $antrian->nama = $request->nama;
         $tanggal = explode("-", $request->tanggal);
         $tempTanggal = $tanggal[2] . '-' . $tanggal[1] . '-' . $tanggal[0];
@@ -55,6 +71,7 @@ class AntrianController extends Controller
             $antrian->nomor = $tempNomor['nomor'] + 1;
         }
         $antrian->save();
-        return back()->with('status', 'Nomor antrian kamu adalah ' . $antrian->nomor . '!');
+        // return back()->with('status', 'Nomor antrian kamu adalah ' . $antrian->nomor . '!');
+        return redirect('/antrian');
     }
 }
