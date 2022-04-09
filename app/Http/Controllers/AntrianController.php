@@ -11,7 +11,7 @@ use Carbon\Carbon;
 class AntrianController extends Controller
 {
     public function index() {
-        return view('antrian.index');
+        return view('antrian.antrian');
     }
     
     public function nomor_antrian() {

@@ -17,12 +17,31 @@ class AdminController extends Controller
         $date = Carbon::now()->toDateTimeString();
         $now = substr($date, 0, 10);
 
-        $loket = Antrian::select('nomor')
+        $loket = Antrian::select('nomor', 'poli_id')
             ->where('tanggal', $now)
-            ->where('status', 0)
-            ->first();
+            ->where('status', 1)
+            ->get();
+        
+        $data = [];
+        for ($i = 0; $i < count($loket); $i++) {
+            if ($loket[$i]->poli_id == 1) {
+                $data['loket1'] = $loket[$i]->nomor + 1;
+            }
 
-        return view('admin.index', ['loket' => $loket->nomor]);
+            if ($loket[$i]->poli_id == 2) {
+                $data['loket2'] = $loket[$i]->nomor + 1;
+            }
+
+            if ($loket[$i]->poli_id == 3) {
+                $data['loket3'] = $loket[$i]->nomor + 1;
+            }
+        }
+        
+        return view('admin.admin', [
+            'loket_1' => $data['loket1'] ?? 1,
+            'loket_2' => $data['loket2'] ?? 1,
+            'loket_3' => $data['loket3'] ?? 1
+        ]);
     }
 
     public function next($poli) {
@@ -37,6 +56,15 @@ class AdminController extends Controller
 
         $loket->status = 1;
         $loket->save();
-        return redirect('/admin')->with('loket', $loket->nomor);
+
+        $nomor = Antrian::select('nomor')
+        ->where('tanggal', $now)
+        ->where('status', 0)
+        ->where('poli_id', $poli)
+        ->first();
+
+        return response()->json([
+            'nomor' => $nomor->nomor
+        ]);
     }
 }
