@@ -15,16 +15,18 @@ class AntrianController extends Controller
     public function index() {
         $arr = ['A', 'B', 'C'];
         if (auth()->check()) {
-            $antrian_user = Antrian::where('user_id', Auth::id())->first();
+            $antrian_user = Antrian::where([
+                ['user_id', '=', Auth::id()],
+                ['status', '=', 0]
+            ])->first();
+
             $nomor = $antrian_user->nomor;
             $loket = $arr[$antrian_user->poli_id - 1];
-            $mendaftar = Auth::user()->mendaftar;
 
-            return view('antrian.antrian', compact('nomor', 'mendaftar', 'loket'));
+            return view('antrian.antrian', compact('nomor', 'loket'));
         }
 
         return view('antrian.antrian');
-        
     }
     
     public function nomor_antrian() {

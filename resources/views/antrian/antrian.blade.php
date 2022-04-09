@@ -17,17 +17,15 @@
     <div class="container" id="antrian"></div>
 
     @auth
-        @if ($mendaftar == 1)
-            <div class="container card-group">
-                <div class="card border-dark text-center my-5">
-                    <div class="card-header">Rumah Sakit Terserah</div>
-                    <div class="card-body">
-                        <h5 class="card-title">Nomor Antrian Anda</h5>
-                        <h1 class="card-text">{{ $loket . '' . $nomor }}</h1>
-                    </div>
+        <div class="container card-group">
+            <div class="card border-dark text-center my-5">
+                <div class="card-header">Rumah Sakit Terserah</div>
+                <div class="card-body">
+                    <h5 class="card-title">Nomor Antrian Anda</h5>
+                    <h1 class="card-text">{{ $loket . '' . $nomor }}</h1>
                 </div>
             </div>
-        @endif
+        </div>
     @endauth
 
 
