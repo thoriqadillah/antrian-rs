@@ -23,7 +23,6 @@ class AntrianSeeder extends Seeder
             DB::table('users')->insert([
                 'name' => $faker->name,
                 'email' => $faker->email(),
-                'mendaftar' => 1,
                 'is_admin' => 0,
                 'password' => Hash::make('12345678'),
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),

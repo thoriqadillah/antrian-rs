@@ -54,8 +54,6 @@ class AdminController extends Controller
             ->where('status', 0)
             ->where('poli_id', $poli)
             ->first();
-        
-        User::where('id', $loket->user_id)->update(['mendaftar' => 0]);
 
         $loket->status = 1;
         $loket->save();
