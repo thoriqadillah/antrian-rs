@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Antrian;
+use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Date;
@@ -53,6 +54,8 @@ class AdminController extends Controller
             ->where('status', 0)
             ->where('poli_id', $poli)
             ->first();
+        
+        User::where('id', $loket->user_id)->update(['mendaftar' => 0]);
 
         $loket->status = 1;
         $loket->save();

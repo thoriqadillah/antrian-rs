@@ -8,27 +8,27 @@
         <div class="card text-center" style="width: 18rem;">
             <div class="card-body">
                 <h3 class="card-title">Loket 1</h3>
-                <h1 class="nomor" data-id="1">{{ $loket_1 }}</h1>
+                <h1 class="nomor" data-id="1">{{ 'A' . $loket_1 ?? '1' }}</h1>
                 <span class="refresh" data-id="1"></span>
-                <button class="btn btn-primary btn-md btn-block next"  data-id='1'>NEXT</button>
+                <button class="btn btn-primary next" data-id='1'>NEXT</button>
             </div>
         </div>
     
         <div class="card text-center" style="width: 18rem;">
             <div class="card-body">
                 <h3 class="card-title">Loket 2</h3>
-                <h1 class="nomor" data-id="2">{{ $loket_2 }}</h1>
+                <h1 class="nomor" data-id="2">{{ 'B' . $loket_2 ?? '1' }}</h1>
                 <span class="refresh" data-id="2"></span>
-                <button class="btn btn-primary next"  data-id='2'>NEXT</button>
+                <button class="btn btn-primary next" data-id='2'>NEXT</button>
             </div>
         </div>
     
         <div class="card text-center" style="width: 18rem;">
             <div class="card-body">
                 <h3 class="card-title">Loket 3</h3>
-                <h1 class="nomor" data-id="3">{{ $loket_3 }}</h1>
+                <h1 class="nomor" data-id="3">{{ 'C' . $loket_3 ?? '1' }}</h1>
                 <span class="refresh" data-id="3"></span>
-                <button class="btn btn-primary next"  data-id='3'>NEXT</button>
+                <button class="btn btn-primary next" data-id='3'>NEXT</button>
             </div>
         </div>
     </div>
@@ -41,10 +41,11 @@
 <script>
 $(".next").on('click', function() {
     let id = $(this).data("id");
-    updateAntrian(id);
+    let arr = ['A', 'B', 'C'];
+    updateAntrian(id, arr[id - 1]);
 });
 
-function updateAntrian(id) {
+function updateAntrian(id, loket) {
     let nomor = 1;
     $.ajaxSetup({
         headers: {
@@ -55,8 +56,8 @@ function updateAntrian(id) {
         url: `/next/${id}`,
         type: 'get',
         success: function(res) {
-            nomor = res.nomor;
-            $(`.nomor[data-id=${id}]`).text(nomor);
+            let nomor = res.nomor;
+            $(`.nomor[data-id=${id}]`).text(loket + "" + nomor);
         },
         statusCode: {
             404: function() {
