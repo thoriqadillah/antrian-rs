@@ -14,7 +14,7 @@
 }
 input[type="checkbox"] { 
     /* change "blue" browser chrome to yellow */
-    filter: invert(100%) hue-rotate(18deg) brightness(1.7);
+    filter: invert(100%) hue-rotate(120deg) brightness(1.7);
   }
 .submit{
     margin-left:150px;
@@ -25,7 +25,7 @@ input[type="checkbox"] {
     border: none;
 }
 .btn-login:hover{
-    background-color: rgb(241, 246, 92);
+    background-color: rgb(86, 193, 255);
 }
 .btn-link{
     display: inline-block;
