@@ -20,10 +20,12 @@ class AntrianController extends Controller
                 ['status', '=', 0]
             ])->first();
 
-            $nomor = $antrian_user->nomor;
-            $loket = $arr[$antrian_user->poli_id - 1];
-
-            return view('antrian.antrian', compact('nomor', 'loket'));
+            if($antrian_user)
+            {
+                $nomor = $antrian_user->nomor;
+                $loket = $arr[$antrian_user->poli_id - 1];
+                return view('antrian.antrian', compact('nomor', 'loket'));
+            }
         }
 
         return view('antrian.antrian');

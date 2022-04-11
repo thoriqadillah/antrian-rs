@@ -17,26 +17,28 @@
     <div class="container" id="antrian"></div>
 
     @auth
-        <div class="container card-group" id="antrian-wrapper">
-            <div class="card border-dark text-center my-5" id="lists">
-                <div class="antrian">
-                    <div class="card-headers">
-                        <img src="https://i.ibb.co/K2L3hnF/stethoscope-icon-gfe1c62d5a-1280.png" class="img">
-                    </div>
-                    <div class="card-body">
-                        <h3 class="card-title">Nomor Antrian Anda</h5>
-                        <h1 class="card-text">{{ $loket . '' . $nomor }}</h1>
+        @if(isset($nomor))
+            <div class="container card-group" id="antrian-wrapper">
+                <div class="card border-dark text-center my-5" id="lists">
+                    <div class="antrian">
+                        <div class="card-headers">
+                            <img src="https://i.ibb.co/K2L3hnF/stethoscope-icon-gfe1c62d5a-1280.png" class="img">
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title">Nomor Antrian Anda</h5>
+                            <h1 class="card-text">{{ $loket . '' . $nomor }}</h1>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        @endif
     @endauth
 
 
 <script>
     $(document).ready(function(){
         get_antrian();
-        setInterval(get_antrian, 1000);
+        setInterval(get_antrian, 3000);
     });
     function get_antrian(){
         $.ajaxSetup({
