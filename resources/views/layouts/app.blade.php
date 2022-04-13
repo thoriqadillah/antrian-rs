@@ -43,7 +43,11 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
                         <a class="nav-link " href="{{route('antrian')}}">List Antrian</a>
-                        <a class="nav-link " href="{{route('antrian.pendaftaran')}}">Daftar Antrian</a>
+                        @if (Auth::user()->is_admin == 1)
+                            <a class="nav-link " href="{{route('admin')}}">Admin</a>
+                        @else
+                            <a class="nav-link " href="{{route('antrian.pendaftaran')}}">Daftar Antrian</a>
+                        @endif
                     </ul>
 
                     <!-- Right Side Of Navbar -->
