@@ -1,0 +1,9 @@
+.img{
+    width: 50px;
+    margin-top: 10px;
+}
+
+.antrian-wrapper {
+    background-color: #f7f7f7;
+    box-shadow: 3px 3px 3px 3px rgb(117, 117, 117);
+}

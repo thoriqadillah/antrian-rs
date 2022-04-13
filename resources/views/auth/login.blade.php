@@ -64,7 +64,7 @@
                                     </a>
                                 @endif <br>
                                 <p>Not a Member yet?
-                                    <a class="btn-link" href="" style="text-decoration: none">
+                                    <a class="btn-link" href="{{ route('register') }}" style="text-decoration: none">
                                     Register Now! </a>
                                 </p>
                                 
