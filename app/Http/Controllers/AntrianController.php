@@ -17,13 +17,16 @@ class AntrianController extends Controller
         if (auth()->check()) {
             $antrian_user = Antrian::where([
                 ['user_id', '=', Auth::id()],
-                ['status', '=', 0]
+                ['status', '=', 0],
+                ['tanggal', Carbon::now()->format('Y-m-d')]
             ])->first();
 
-            $nomor = $antrian_user->nomor;
-            $loket = $arr[$antrian_user->poli_id - 1];
-
-            return view('antrian.antrian', compact('nomor', 'loket'));
+            if($antrian_user)
+            {
+                $nomor = $antrian_user->nomor;
+                $loket = $arr[$antrian_user->poli_id - 1];
+                return view('antrian.antrian', compact('nomor', 'loket'));
+            }
         }
 
         return view('antrian.antrian');
