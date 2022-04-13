@@ -76,7 +76,7 @@ function updateAntrian(id, loket) {
             }
         },
         error: function(x, xs, xt) {
-            $(`.refresh[data-id=${id}]`).append(`<button class="btn btn-outline-primary btn-md btn-block"  data-id='3' onClick="window.location.reload()">REFRESH</button>`)
+            $(`.refresh[data-id=${id}]`).append(`<button class="next" id="refresh"  data-id='3' onClick="window.location.reload()">REFRESH</button>`)
         }
     });
 
