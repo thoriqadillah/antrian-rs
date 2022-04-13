@@ -14,7 +14,7 @@
                     <h3 class="card-title">Loket 1</h3>
                     <h1 class="nomor" data-id="1">{{ 'A' . $loket_1 ?? '1' }}</h1>
                     <span class="refresh" data-id="1"></span>
-                    <button class="btn btn-primary next" data-id='1'>NEXT</button>
+                    <button class="next px-4" data-id='1'>NEXT</button>
                 </div>
             </div>
         </div>
@@ -26,7 +26,7 @@
                     <h3 class="card-title">Loket 2</h3>
                     <h1 class="nomor" data-id="2">{{ 'B' . $loket_2 ?? '1' }}</h1>
                     <span class="refresh" data-id="2"></span>
-                    <button class="btn btn-primary next" data-id='2'>NEXT</button>
+                    <button class="next px-4" data-id='2'>NEXT</button>
                 </div>
             </div>
         </div>
@@ -38,7 +38,7 @@
                     <h3 class="card-title">Loket 3</h3>
                     <h1 class="nomor" data-id="3">{{ 'C' . $loket_3 ?? '1' }}</h1>
                     <span class="refresh" data-id="3"></span>
-                    <button class="btn btn-primary next" data-id='3'>NEXT</button>
+                    <button class="next px-4" data-id='3'>NEXT</button>
                 </div>
             </div>
         </div>

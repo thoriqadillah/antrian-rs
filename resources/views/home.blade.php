@@ -7,7 +7,10 @@
   <p class="lead">Pilihan untuk keluarga anda </p>
   <!-- <a href="https://ibb.co/n0M0bB6"><img src="https://i.ibb.co/59h96kG/pexels-pavel-danilyuk-6812561.jpg" alt="pexels-pavel-danilyuk-6812561"></a>  <a href="{{route('antrian.pendaftaran')}}"> -->     
   <div class="text-center">
-    <button type="button" class="btn btn-info" style='color: white'>Daftar Disini</button>
+    <a class="mb-2" href="{{route('antrian.pendaftaran')}}">
+      <button type="button" class="daftar-home px-4" style="margin-bottom:20px;
+      height:50px; border-radius: 10px; font-weight: bold;font-size:13pt;" >Daftar Disini</button>
+    </a>
   <!-- </a>   -->
   </div>
 </div>

@@ -7,3 +7,14 @@
     background-color: #f7f7f7;
     box-shadow: 3px 3px 3px 3px rgb(117, 117, 117);
 }
+.next{
+    margin-bottom:20px;
+    height:50px; 
+    border-radius: 10px; 
+    font-weight: bold;
+    font-size:13pt;
+}
+.next:hover{
+    background-color: rgb(65, 166, 225);
+    color: rgb(244, 248, 251);
+}

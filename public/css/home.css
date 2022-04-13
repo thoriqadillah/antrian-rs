@@ -20,3 +20,7 @@
     margin-top: 30px;
     background-color: #d44b5d;
 }
+.daftar-home:hover{
+    background-color: rgb(65, 166, 225);
+    color: rgb(244, 248, 251);
+}
