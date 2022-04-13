@@ -55,6 +55,12 @@
                 $('#antrian').html("")
                 let arr = ['A', 'B', 'C'];
                 for(let i = 0;i < 3; i++){
+                    let isi = '';
+                    if(nomors[i] === null) {
+                        isi = 'Kosong';
+                    } else {
+                        isi = arr[i] + nomors[i]['nomor'];
+                    }
                     $('#antrian').append($(
                         `<div class="antrian-wrapper">
                             <div class="container">
@@ -62,7 +68,7 @@
                                     <img src="https://i.ibb.co/K2L3hnF/stethoscope-icon-gfe1c62d5a-1280.png" class="img">
                                         <div class="card-body">
                                             <h3 class='card-title text-center'>${arr[i]} ${polis[i]['nama_poli']}</h3>
-                                            <h1>${arr[i]}${nomors[i]['nomor']}</h1>
+                                            <h1>${isi}</h1>
                                         </div>
                                  </div>
                             </div>
@@ -70,7 +76,7 @@
                         `
                         )
                     )
-                    }
+                }
             },
             statusCode: {
                 404: function() {
