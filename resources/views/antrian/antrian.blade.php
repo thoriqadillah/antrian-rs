@@ -25,7 +25,7 @@
                             <img src="https://i.ibb.co/K2L3hnF/stethoscope-icon-gfe1c62d5a-1280.png" class="img">
                         </div>
                         <div class="card-body">
-                            <h3 class="card-title">Nomor Antrian Anda</h5>
+                            <h3 class="card-title mx-auto">Nomor Antrian Anda</h5>
                             <h1 class="card-text">{{ $loket . '' . $nomor }}</h1>
                         </div>
                     </div>
