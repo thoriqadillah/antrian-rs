@@ -3,7 +3,7 @@
 
 @section('jumbotron')
 <div class="jumbotron" >
-  <h1 class="display-4">RS Brawijaya</h1>
+  <h1 class="display-4 py-4">RS Brawijaya</h1>
   <p class="lead">Pilihan untuk keluarga anda </p>
   <!-- <a href="https://ibb.co/n0M0bB6"><img src="https://i.ibb.co/59h96kG/pexels-pavel-danilyuk-6812561.jpg" alt="pexels-pavel-danilyuk-6812561"></a>  <a href="{{route('antrian.pendaftaran')}}"> -->     
   <div class="text-center">
