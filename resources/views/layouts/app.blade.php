@@ -19,13 +19,14 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-    
+
     <!-- Styles -->
     @yield('custom-css')
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/css/bootstrap-datepicker.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/auth.css') }}" rel="stylesheet">
+    <link href="css/home.css" type="text/css" rel="stylesheet">
 </head>
 <body>
     <div id="app">
@@ -83,13 +84,11 @@
                 </div>
             </div>
         </nav>
-
         <main class="py-4" style="background: white">
+            @yield('jumbotron')
             @yield('content')
         </main>
     </div>
 </body>
-
 @yield('custom-script')
-
 </html>

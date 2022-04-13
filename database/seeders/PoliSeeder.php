@@ -20,7 +20,7 @@ class PoliSeeder extends Seeder
         ]);
         DB::table('polis')->insert([
             'nama_poli' => "Poliklinik Umum",
-            'deskripsi' => "Poliklinik umum merupakan salah satu layanan yang memberikan pelayanan berupa pemeriksaan kesehatan, pengobatan dan penyuluhan kepada pasien atau masyarakat umum berusia dewasa. Pelayanan kesehatan dilakukan oleh dokter dan perawat yang memiliki sertifikat dan kompetensi yang dibutuhkan untuk pelayanan kesehatan primer."
+            'deskripsi' => "Poliklinik umum merupakan salah satu layanan yang memberikan pelayanan berupa pemeriksaan kesehatan, pengobatan dan penyuluhan kepada pasien atau masyarakat umum berusia dewasa. Pelayanan kesehatan dilakukan oleh dokter dan perawat yang memiliki sertifikat standar."
         ]);
         DB::table('polis')->insert([
             'nama_poli' => "Poliklinik Anak",
