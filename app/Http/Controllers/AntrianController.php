@@ -17,7 +17,8 @@ class AntrianController extends Controller
         if (auth()->check()) {
             $antrian_user = Antrian::where([
                 ['user_id', '=', Auth::id()],
-                ['status', '=', 0]
+                ['status', '=', 0],
+                ['tanggal', Carbon::now()->format('Y-m-d')]
             ])->first();
 
             if($antrian_user)
